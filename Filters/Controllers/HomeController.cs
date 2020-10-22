@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Filters.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +16,23 @@ namespace Filters.Controllers
         public string Index()
         {
             return "This is an index action on the home controller";
+        }
+
+        [RangeException]
+        public string RangeTest(int id)
+        {
+            //results when filter [RangeException] not applied to RangeTest action method
+            // when applied RangeErrorPage will be displayed
+            if (id > 100)
+            {
+                // Home/RangeTest/109    The id value is : 109
+                return String.Format("The id value is : {0}", id);
+            }
+            else
+            {
+                //blabla, Parameter name: id, Actual value was 99
+                throw new ArgumentOutOfRangeException("id", id, "blabla");
+            }
         }
     }
 }

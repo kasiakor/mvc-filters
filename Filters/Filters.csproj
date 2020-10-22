@@ -98,10 +98,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\RangeExceptionAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Content\RangeErrorPage.html" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\Login.cshtml" />
     <None Include="Web.Debug.config">

@@ -34,11 +34,18 @@ namespace Filters.Controllers
             }
         }
 
-        [CustomAction]
+        //[CustomAction]
+        ////action filter check if the connection is local, if yes it will display 404page and not the string below
+        //public string FilterTest()
+        //{
+        //    return "This is the filter test action method on home controller";
+        //}
+
+        [ProfileAction]
         //action filter check if the connection is local, if yes it will display 404page and not the string below
-        public string FilterTest()
+        public string FilterProfileTest()
         {
-            return "This is the filter test action method on home controller";
+            return "This is the action filter test on home controller";
         }
     }
 }

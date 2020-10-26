@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Filters.Infrastructure;
+using System;
 using System.Web.Mvc;
 
 namespace Filters.Controllers
@@ -31,6 +32,13 @@ namespace Filters.Controllers
                 //blabla, Parameter name: id, Actual value was 99
                 throw new ArgumentOutOfRangeException("id", id, "");
             }
+        }
+
+        [CustomAction]
+        //action filter check if the connection is local, if yes it will display 404page and not the string below
+        public string FilterTest()
+        {
+            return "This is the filter test action method on home controller";
         }
     }
 }

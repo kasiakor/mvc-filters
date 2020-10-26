@@ -106,6 +106,7 @@
     <Content Include="Content\RangeErrorPage.html" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\Login.cshtml" />
+    <Content Include="Views\Shared\RangeMyError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

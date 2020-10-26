@@ -1,8 +1,4 @@
-﻿using Filters.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System;
 using System.Web.Mvc;
 
 namespace Filters.Controllers
@@ -18,7 +14,9 @@ namespace Filters.Controllers
             return "This is an index action on the home controller";
         }
 
-        [RangeException]
+        //[RangeException]
+        //applying built-in exception filter
+        [HandleError(ExceptionType = typeof(ArgumentOutOfRangeException), View ="RangeMyError")]
         public string RangeTest(int id)
         {
             //results when filter [RangeException] not applied to RangeTest action method
@@ -31,7 +29,7 @@ namespace Filters.Controllers
             else
             {
                 //blabla, Parameter name: id, Actual value was 99
-                throw new ArgumentOutOfRangeException("id", id, "blabla");
+                throw new ArgumentOutOfRangeException("id", id, "");
             }
         }
     }
